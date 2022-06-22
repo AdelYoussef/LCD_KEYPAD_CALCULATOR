@@ -157,7 +157,22 @@ void calc(float num_1 , float num_2 , char operation)
             result = num_1 * num_2;
             break;
         case '/':
+          if(num_2==0)
+          {
+            clr();
+            LCD_Clear();
+            LCD_Set_Cursor(1,1);
+            LCD_Write_String("invalid \0"); 
+            LCD_Set_Cursor(2,1);
+            LCD_Write_String("operation \0"); 
+            __delay_ms(500);
+            LCD_Clear();
+
+          }
+          else
+          {
             result = num_1 / num_2;
+          }
             break;
             
        
